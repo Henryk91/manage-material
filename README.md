@@ -14,7 +14,7 @@ NB: This project is not intended to be used in production
 1. Make sure you have docker and docker-compose
 2. Make sure you have make installed (https://stat545.com/make-windows.html)
 3. CD into project directory
-3. run: make run of without make docker-compose up
+3. run: make run (or without make docker-compose up)
 
 ### Setting up
 - After running the project you will need to create a super user to log in to the admin (make superuser)
