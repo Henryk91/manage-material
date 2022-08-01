@@ -39,7 +39,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=False,
         help_text=("Designates whether the user can log into this admin site."),
     )
-    # user_id = models.CharField(primary_key=True, unique=True, max_length=100)
 
     USERNAME_FIELD = "email"
 
