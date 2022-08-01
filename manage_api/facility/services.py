@@ -7,7 +7,7 @@ class WasteQuantityService:
         category_list = self.get_delivery_category_list(delivery_items)
 
         return {
-            "catagory_list": category_list,
+            "category_list": category_list,
         }
 
     def get_waste_quantity_by_facility(self, facility_id):
@@ -19,7 +19,7 @@ class WasteQuantityService:
         return {
             "facility_id": facility.id,
             "facility_name": facility.name,
-            "catagory_list": category_list,
+            "category_list": category_list,
         }
 
     def get_waste_quantity_by_facility_b(self, facility_id):
@@ -47,7 +47,7 @@ class WasteQuantityService:
         return {
             "facility_id": facility.id,
             "facility_name": facility.name,
-            "catagory_list": category_list,
+            "category_list": category_list,
         }
 
     def get_delivery_category_list(self, delivery_items):

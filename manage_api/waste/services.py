@@ -20,5 +20,5 @@ class WasteCategoryHistoryService:
 
         return {
             "category_id": category_id,
-            "catagory_list": history_list,
+            "category_list": history_list,
         }

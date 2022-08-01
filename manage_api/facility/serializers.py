@@ -64,7 +64,7 @@ class DeliveryItemSerializer(serializers.Serializer):
         fields = ("facility", "weight", "material_type", "waste_type")
 
 
-class WasteCatagoryQuantitySerializer(serializers.Serializer):
+class WasteCategoryQuantitySerializer(serializers.Serializer):
     category_id = serializers.CharField()
     category_name = serializers.CharField()
     waste_type = serializers.CharField()
@@ -72,13 +72,13 @@ class WasteCatagoryQuantitySerializer(serializers.Serializer):
     weight = serializers.CharField()
 
     class Meta:
-        ref_name = "WasteCatagoryQuantity"
+        ref_name = "WasteCategoryQuantity"
 
 
 class FacilityWasteQuantitySerializer(serializers.Serializer):
     facility_id = serializers.CharField(required=False)
     facility_name = serializers.CharField(required=False)
-    catagory_list = WasteCatagoryQuantitySerializer(many=True, required=False)
+    category_list = WasteCategoryQuantitySerializer(many=True, required=False)
 
     def validate(self, attr):
         facility = Facility.objects.filter(id=attr["facility_id"])
@@ -92,7 +92,7 @@ class FacilityWasteQuantitySerializer(serializers.Serializer):
 
 
 class TotalWasteQuantitySerializer(serializers.Serializer):
-    catagory_list = WasteCatagoryQuantitySerializer(many=True, required=False)
+    category_list = WasteCategoryQuantitySerializer(many=True, required=False)
 
     class Meta:
         ref_name = "TotalWasteQuantity"

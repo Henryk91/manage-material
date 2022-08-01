@@ -28,12 +28,12 @@ class WasteCategoryHistoryItemSerializer(serializers.Serializer):
     username = serializers.CharField()
 
     class Meta:
-        ref_name = "WasteCatagoryHistoryItem"
+        ref_name = "WasteCategoryHistoryItem"
 
 
 class WasteCategoryHistorySerializer(serializers.Serializer):
     category_id = serializers.CharField(required=False)
-    catagory_list = WasteCategoryHistoryItemSerializer(many=True, required=False)
+    category_list = WasteCategoryHistoryItemSerializer(many=True, required=False)
 
     def validate(self, attr):
         facility = WasteCategory.objects.filter(id=attr["category_id"])
