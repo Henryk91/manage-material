@@ -56,6 +56,7 @@ class DeliveryItemSerializer(serializers.Serializer):
             waste_category=waste_category,
             facility=validated_data["facility"],
             weight=validated_data["weight"],
+            user=self.context["request"].user
         )
 
     class Meta:
